@@ -8,15 +8,15 @@ body {
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
+  background-color: #8014ff;
 }
 
 .header {
   background-color: #f8f9fa;
   padding: 1rem 0;
   border-bottom: 1px solid #ccc;
-  position: sticky; /* Hace que el header se quede fijo al hacer scroll */
   top: 0; /* Se adhiere a la parte superior */
-  z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+  transition: top 0.3s;
 }
 
 .container {
@@ -62,6 +62,28 @@ footer {
   color: #333;
   text-align: center;
   padding: 1em;
-  position: fixed;
   width: 100%;
+  bottom: 0;
+}
+
+.card {
+  border: 1px solid #007bff; /* Borde azul */
+}
+
+.card-title {
+  font-weight: bold; /* Títulos en negrita */
+}
+
+.card-text {
+  font-size: 0.9rem; /* Tamaño de texto más pequeño */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Color de fondo azul */
+  border-color: #007bff; /* Color del borde */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Color de fondo en hover */
+  border-color: #0056b3; /* Color del borde en hover */
 }

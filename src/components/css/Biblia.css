@@ -1,0 +1,28 @@
+/* Biblia.css */
+#biblia {
+  padding: 20px; /* Espaciado interior */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  max-width: 600px; /* Ancho máximo */
+  margin: 20px auto; /* Centrar horizontalmente */
+  text-align: center; /* Alinear el texto al centro */
+}
+
+#biblia h2 {
+  font-size: 2rem; /* Tamaño de fuente grande */
+  color: #333; /* Color de texto oscuro */
+  margin-bottom: 10px; /* Espaciado inferior */
+}
+
+#biblia p {
+  font-size: 1.2rem; /* Tamaño de fuente moderado */
+  color: #666; /* Color de texto más claro */
+}
+
+
+.secu-bi p {
+    display: flex;
+    justify-content: center;
+    
+    flex-direction: column;
+}
