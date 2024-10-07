@@ -9,54 +9,19 @@ import Biblia from './components/Biblia';
 import LibroDeMormon from './components/LibroDeMormon';
 import DYC from './components/DYC';
 import PerlaDeGranPrecio from './components/PerlaDeGranPrecio';
-import Historias from './components/Historias';
+import Santos from './components/Santos';
 import LibrosDeLosProfetas from './components/LibrosDeLosProfetas';
 
-/* Logo e imágenes */
-import logo from './assets/logosantos.png';
-import argentina from './assets/argentina.png';
-import chile from './assets/confe/chile.webp';
-import panama from './assets/confe/panama.webp';
-import uruguay from './assets/confe/uruguya.webp';
+/* logo */
+import logo from './assets/logosantos.png'
 
-/* importacion de img de redes */
-import instagram from './assets/instagram.webp';
-import facebook from './assets/facebook.png';
-import tiktok from './assets/tiktok.png';
+/* importacion de enlaces para mis iconos de redes socciles */
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faTiktok, faFacebook } from '@fortawesome/free-brands-svg-icons';
+
 
 function App() {
-  const importantCarouselRef = useRef(null);
-  const socialCarouselRef = useRef(null);
   const [activeSection, setActiveSection] = useState(null); // Estado para la sección activa
-
-  useEffect(() => {
-    const importantCarousel = importantCarouselRef.current;
-    const socialCarousel = socialCarouselRef.current;
-
-    // Función para mover el carrusel
-    const moveCarousel = (carousel, interval) => {
-      let index = 0;
-      const items = carousel.querySelectorAll('.carousel-item');
-
-      const showNextItem = () => {
-        items[index].classList.remove('active');
-        index = (index + 1) % items.length;
-        items[index].classList.add('active');
-      };
-
-      const intervalId = setInterval(showNextItem, interval);
-      return () => clearInterval(intervalId);
-    };
-
-    const importantCarouselInterval = moveCarousel(importantCarousel, 3000);
-    const socialCarouselInterval = moveCarousel(socialCarousel, 4000);
-
-    return () => {
-      importantCarouselInterval();
-      socialCarouselInterval();
-    };
-  }, []);
-
   const handleSectionClick = (section) => {
     setActiveSection(section);
   };
@@ -65,13 +30,13 @@ function App() {
     <Router>
       <div>
         {activeSection ? (
-          // Si hay una sección activa, mostrar solo esa sección
           <div>
+            <button onClick={() => setActiveSection(null)} className="btn btn-secondary">Volver</button>
             {activeSection === 'biblia' && <Biblia />}
             {activeSection === 'librodemormon' && <LibroDeMormon />}
             {activeSection === 'dyc' && <DYC />}
             {activeSection === 'perladegranprecio' && <PerlaDeGranPrecio />}
-            {activeSection === 'historias' && <Historias />}
+            {activeSection === 'Santos' && <Santos />}
             {activeSection === 'librosdelosprofetas' && <LibrosDeLosProfetas />}
             <button onClick={() => setActiveSection(null)} className="btn btn-secondary">Volver</button>
           </div>
@@ -82,71 +47,34 @@ function App() {
                 <div className="logo">
                   <img src={logo} alt="Santos de Sion Logo" />
                 </div>
-                <nav className="nav">
-                  <ul>
-                    <li><Link to="#" onClick={() => handleSectionClick('biblia')}>Biblia</Link></li>
-                    <li><Link to="#" onClick={() => handleSectionClick('librodemormon')}>Libro de Mormón</Link></li>
-                    <li><Link to="#" onClick={() => handleSectionClick('dyc')}>Doctrina y Convenios</Link></li>
-                    <li><Link to="#" onClick={() => handleSectionClick('perladegranprecio')}>La Perla de Gran Precio</Link></li>
-                    <li><Link to="#" onClick={() => handleSectionClick('historias')}>Historias</Link></li>
-                    <li><Link to="#" onClick={() => handleSectionClick('librosdelosprofetas')}>Libros de los Profetas</Link></li>
-                  </ul>
-                </nav>
+                <div className="social-media">
+                  <a href="https://www.instagram.com/santosdesion/?__pwa=1" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faInstagram} size="2x" />
+                  </a>
+                  <a href="https://www.tiktok.com/@santosdesion" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faTiktok} size="2x" />
+                  </a>
+                  <a href="https://www.facebook.com/profile.php?id=61566300483992" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faFacebook} size="2x" />
+                  </a>
+                </div>
               </div>
             </header>
 
+
             <main>
-              <section id="inicio" className="hero">
-                <div className="container mt-4">
-                  <div className="row">
-                    <div className="col-lg-8 col-md-7 mb-4">
-                      <div id="importantCarousel" className="carousel" ref={importantCarouselRef}>
-                        <div className="carousel-inner">
-                          <div className="carousel-item active">
-                            <img src={argentina} className="d-block w-100" alt="Carrusel 1" />
-                          </div>
-                          <div className="carousel-item">
-                            <img src={chile} className="d-block w-100" alt="Carrusel 2" />
-                          </div>
-                          <div className="carousel-item">
-                            <img src={panama} className="d-block w-100" alt="Carrusel 3" />
-                          </div>
-                          <div className="carousel-item">
-                            <img src={uruguay} className="d-block w-100" alt="Carrusel 4" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-4 col-md-5 mb-4">
-                      <div id="socialCarousel" className="carousel" ref={socialCarouselRef}>
-                        <div className="carousel-inner">
-                          <div className="carousel-item active">
-                            <img src={instagram} className="d-block w-100" alt="Red Social 1" />
-                          </div>
-                          <div className="carousel-item">
-                            <img src={facebook} className="d-block w-100" alt="Red Social 1" />
-                          </div>
-                          <div className="carousel-item">
-                            <img src={tiktok} className="d-block w-100" alt="Red Social 1" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
               {/* Tarjetas */}
-              <h2 className="text-center text-white">Quieres aprender del:</h2>
-              <div className="container mt-5">
+              <h2 className="text-center text-dark p-5 display-4">¡Bienvenidos a Santos de Sion!</h2>
+              <p className="text-center lead">Descubre una variedad de temas para enriquecer tu estudio y comprensión.</p>
+
+              <div className="container mt-1">
                 <div className="row">
                   <div className="col-md-4 mb-4">
                     <div className="card">
                       <div className="card-body">
                         <h5 className="card-title">Biblia</h5>
                         <p className="card-text">Explora las escrituras de la Biblia: Antiguo y Nuevo Testamento.</p>
-                        <Link to="#" onClick={() => handleSectionClick('biblia')} className="btn btn-primary">Leer más</Link>
+                        <Link to="#" onClick={() => handleSectionClick('biblia')} className="btn btn-primary">Leer más...</Link>
                       </div>
                     </div>
                   </div>
@@ -156,7 +84,7 @@ function App() {
                       <div className="card-body">
                         <h5 className="card-title">Libro de Mormón</h5>
                         <p className="card-text">Lea y estudie el Libro de Mormón, un testamento más de Jesucristo.</p>
-                        <Link to="#" onClick={() => handleSectionClick('librodemormon')} className="btn btn-primary">Leer más</Link>
+                        <Link to="#" onClick={() => handleSectionClick('librodemormon')} className="btn btn-primary">Leer más...</Link>
                       </div>
                     </div>
                   </div>
@@ -166,7 +94,7 @@ function App() {
                       <div className="card-body">
                         <h5 className="card-title">Doctrina y Convenios</h5>
                         <p className="card-text">Revelaciones modernas recopiladas en Doctrina y Convenios.</p>
-                        <Link to="#" onClick={() => handleSectionClick('dyc')} className="btn btn-primary">Leer más</Link>
+                        <Link to="#" onClick={() => handleSectionClick('dyc')} className="btn btn-primary">Leer más...</Link>
                       </div>
                     </div>
                   </div>
@@ -176,7 +104,7 @@ function App() {
                       <div className="card-body">
                         <h5 className="card-title">La Perla de Gran Precio</h5>
                         <p className="card-text">Descubra los textos adicionales de la Perla de Gran Precio.</p>
-                        <Link to="#" onClick={() => handleSectionClick('perladegranprecio')} className="btn btn-primary">Leer más</Link>
+                        <Link to="#" onClick={() => handleSectionClick('perladegranprecio')} className="btn btn-primary">Leer más...</Link>
                       </div>
                     </div>
                   </div>
@@ -184,9 +112,9 @@ function App() {
                   <div className="col-md-4 mb-4">
                     <div className="card">
                       <div className="card-body">
-                        <h5 className="card-title">Historias</h5>
-                        <p className="card-text">Historias y relatos inspiradores de la fe y la esperanza.</p>
-                        <Link to="#" onClick={() => handleSectionClick('historias')} className="btn btn-primary">Leer más</Link>
+                        <h5 className="card-title">Tomos Santos</h5>
+                        <p className="card-text">Descubra y estudia la historia de la iglesia con los tomos santos.</p>
+                        <Link to="#" onClick={() => handleSectionClick('Santos')} className="btn btn-primary">Leer más...</Link>
                       </div>
                     </div>
                   </div>
@@ -196,7 +124,7 @@ function App() {
                       <div className="card-body">
                         <h5 className="card-title">Libros de los Profetas</h5>
                         <p className="card-text">Explora los libros escritos por profetas de los últimos días.</p>
-                        <Link to="#" onClick={() => handleSectionClick('librosdelosprofetas')} className="btn btn-primary">Leer más</Link>
+                        <Link to="#" onClick={() => handleSectionClick('librosdelosprofetas')} className="btn btn-primary">Leer más...</Link>
                       </div>
                     </div>
                   </div>
@@ -207,6 +135,7 @@ function App() {
             <footer className="footer">
               <div className="container text-center">
                 <p className="text-dark">© 2024 Santos de Sion. Todos los derechos reservados.</p>
+                <a className="text-center" href="mailto:santodesion@gmail.com">Enviar un correo a Gmail</a>
               </div>
             </footer>
           </div>

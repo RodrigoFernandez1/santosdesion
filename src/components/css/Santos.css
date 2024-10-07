@@ -1,46 +1,47 @@
-.contenedor-biblia {
+.contenedor-santos {
   background-color: aliceblue;
   padding: 0;
   margin: 0;
 }
 
-.main-bi {
+.main-santos {
   padding: 1em;
 }
 
-#biblia {
+#santos {
   padding: 20px; /* Espaciado interior */
   border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 2px 8px rgba(195, 0, 255, 0.342); /* Sombra suave */
   max-width: 600px; /* Ancho máximo */
   margin: 20px auto; /* Centrar horizontalmente */
   text-align: center; /* Alinear el texto al centro */
-  background-color: rgba(0, 60, 255, 0.466);
+  background-color: rgb(0, 204, 255);
 }
 
-#biblia h2 {
+#santos h2 {
   font-size: 2rem; /* Tamaño de fuente grande */
   color: #ffffff; /* Color de texto oscuro */
   margin-bottom: 10px; /* Espaciado inferior */
 }
 
-#biblia p {
+#santos p {
   font-size: 1.2rem; /* Tamaño de fuente moderado */
   color: #ffffff; /* Color de texto más claro */
 }
 
-.secu-bi p {
+.santos p {
   display: flex;
   justify-content: center;
 
   flex-direction: column;
 }
 
-.prin-biblia {
+.prin-santos {
   padding: 40px 20px; /* Espaciado superior e inferior */
   background-color: #f8f9fa; /* Color de fondo suave */
   border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  text-align: center;
 }
 
 h2 {
@@ -49,12 +50,7 @@ h2 {
   color: #343a40; /* Color del texto */
 }
 
-.secu-bi {
-  display: flex; /* Utiliza flexbox para alinear elementos */
-  align-items: flex-start; /* Alineación vertical al inicio */
-}
-
-.secu-bi img {
+.secu-santos img {
   width: 30%; /* Ajusta el tamaño de la imagen (40% del contenedor) */
   height: auto; /* Mantener la proporción */
   margin-right: 20px; /* Espaciado a la derecha de la imagen */
