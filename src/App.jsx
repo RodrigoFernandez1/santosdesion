@@ -135,7 +135,7 @@ function App() {
             <footer className="footer">
               <div className="container text-center">
                 <p className="text-dark">© 2024 Santos de Sion. Todos los derechos reservados.</p>
-                <a className="text-center" href="mailto:santodesion@gmail.com">Enviar un correo a Gmail</a>
+                <a className="text-center" href="mailto:santodesion@gmail.com">Enviar un correo...</a>
               </div>
             </footer>
           </div>
