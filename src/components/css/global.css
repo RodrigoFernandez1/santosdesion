@@ -1,0 +1,87 @@
+/* estilos a los temas de estudio */
+.info.section {
+  background-color: #f8f9fa;
+  padding: 3rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* esitlo para el acordeon */
+.info.section h2 {
+  font-size: 2.5rem;
+  color: #343a40;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* estilo para los botones del acordeon */
+.accordion-button {
+  background-color: #ffffff;
+  color: #007b77;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.accordion-button:hover {
+  background-color: #e9ecef;
+  color: #4c00ff;
+}
+
+/* Estilos para el contenido del acordeón */
+.accordion-body {
+  background-color: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  color: #495057;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+
+.accordion-body p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Estilo para las imágenes dentro del acordeón */
+.accordion-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+/* Estilo para el botón cuando el contenido está desplegado */
+.accordion-button:not(.collapsed) {
+  background-color: #007bff;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.accordion-button:not(.collapsed)::after {
+  transform: rotate(90deg);
+}
+
+/* Responsive ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .info-section {
+    padding: 2rem 1rem;
+  }
+
+  .info-section h2 {
+    font-size: 2rem;
+  }
+
+  .accordion-button {
+    font-size: 1.1rem;
+  }
+
+  .accordion-body {
+    font-size: 1rem;
+  }
+}
