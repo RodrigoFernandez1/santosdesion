@@ -48,13 +48,13 @@ function App() {
                   <img src={logo} alt="Santos de Sion Logo" />
                 </div>
                 <div className="social-media">
-                  <a href="https://www.instagram.com/santosdesion/?__pwa=1" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.instagram.com/sudunidos/?__pwa=1" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faInstagram} size="2x" />
                   </a>
-                  <a href="https://www.tiktok.com/@santosdesion" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.tiktok.com/@sudunidos" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faTiktok} size="2x" />
                   </a>
-                  <a href="https://www.facebook.com/profile.php?id=61566300483992" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.facebook.com/SUDunidos" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faFacebook} size="2x" />
                   </a>
                 </div>
@@ -64,7 +64,7 @@ function App() {
 
             <main>
               {/* Tarjetas */}
-              <h2 className="text-center text-dark p-5 display-4">¡Bienvenidos a Santos de Sion!</h2>
+              <h2 className="text-center text-dark p-5 display-4">¡Bienvenidos a Sud Unidos!</h2>
               <p className="text-center lead">Descubre una variedad de temas para enriquecer tu estudio y comprensión.</p>
 
               <div className="container mt-1">
@@ -134,7 +134,7 @@ function App() {
 
             <footer className="footer">
               <div className="container text-center">
-                <p className="text-dark">© 2024 Santos de Sion. Todos los derechos reservados.</p>
+                <p className="text-dark">© 2024 Sud Unidos.</p>
                 <a className="text-center" href="mailto:santodesion@gmail.com">Enviar un correo...</a>
               </div>
             </footer>

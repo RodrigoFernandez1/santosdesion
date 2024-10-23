@@ -26,8 +26,8 @@ const LibroDeMormon = () => {
                     Libro de Mormon
                   </a>
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a className="dropdown-item" href="#antiguo">Proximamente...</a></li>
-                    <li><a className="dropdown-item" href="#nuevo">Proximamente...</a></li>
+                    <li><a className="dropdown-item" href="#antiguo">Historia(resumen)</a></li>
+                    <li><a className="dropdown-item" href="#lacreacion">La Visión del Árbol de la Vida</a></li>
                     <li><hr className="dropdown-divider" /></li>
                     <li><a className="dropdown-item" href="#otros">Proximamente...</a></li>
                   </ul>
